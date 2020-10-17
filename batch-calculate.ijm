@@ -5,7 +5,6 @@ macro "Auto Measure and Save"
 	list = getFileList(dir_processing);
 	for(i = 0; i < list.length; i++)
 	{
-
 		open(list[i]);
 		run("8-bit");
 		setAutoThreshold("MaxEntropy dark");
