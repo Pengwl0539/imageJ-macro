@@ -14,15 +14,14 @@ macro "Auto Measure and Save"
 		run("Convert to Mask");
 		run("Fill Holes");
 		run("Watershed");
-		saveAs("tiff", "D:/light-output/"+ getTitle);
+		saveAs("tiff", dir_saving + getTitle);
 		run("Analyze Particles...", "size=10-Infinity show=[Overlay Masks] display exclude clear summarize add in_situ");
 		close();
 		open(list[i]);
 		roiManager("Show None");
 		roiManager("Show All");
 		roiManager("Measure");
-		saveAs("Results", "D:/light-output/" + i+1 + ".csv");
+		saveAs("Results", dir_saving + i+1 + ".csv");
 		close();
 	}
 }
-
